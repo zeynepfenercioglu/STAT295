@@ -1,76 +1,68 @@
-#STAT295 revision
-a<-1+1
+1+1
 1:100
-vec<-1:100
-vec
-class(vec)
-typeof(vec)
-1+5
+2.35:50
 3*5
 100/5
 1:6
 mydice<-1:6
 mydice
 aaa<-555
-AAA<-666
+Aaa<-666
+aaa
+aaa<-777
+aaa
 ls()
+mydice
 mydice-1
 mydice*mydice
-mydice%*%mydice
+mydice%o%mydice
+dim(mydice)<-c(2,3)
+mydice
 dim(mydice)<-c(2,3)
 mydice
 dim(mydice)<-c(1,2,3)
 mydice
-m<-matrix(mydice,nrow=2,byrow=T)
+m<-matrix(mydice,nrow=2)
+m<-matrix(mydice,nrow=2,byrow=TRUE)
+m
+
 myarray<-array(c(1:12),dim=c(2,2,3))
 myarray
-now<-Sys.time
-install.packages(
-  c("devtools","roxygen2","testthat","rmarkdown","pkgdown","purrr")
-)
-usethis::use_git_config(
-  user.name="zeynepfenercioglu",
-  user.email="zeynfenercioglu@gmail.com"
-)
-usethis::create_github_token()
-gitcreds::gitcreds_set()
-
+now<-Sys.time()
+now
+class(now)
+unclass(now)
+mil<-1000000
+now-mil
 data(iris)
-head(iris)
 ?iris
+head(iris)
 class(iris)
+class(iris$Sepal.Length)
+class(iris$Species)
+str(iris)
 summary(iris)
 iris$Sepal.Length
+iris[1,]
+iris[,2]
+iris[,"Species"]
+table(iris$Species)
+LogicIndex<-iris[,"Petal.Length"]>5.5
+LogicIndex
+iris[LogicIndex,]
+mean(iris$Sepal.Length)
+sd(iris$Sepal.Length)
 MeanAndStd<-function(x){
   c(mean=mean(x),std=sd(x))
 }
 MeanAndStd(iris$Sepal.Length)
-Stats<-aggregate(Sepal.Length~Species,data=iris,
-                 FUN=MeanAndStd)
-
-
-#Visualization
-plot(iris$Sepal.Length,col=as.numeric(iris))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Stats<-aggregate(Sepal.Length~Species,data=iris,FUN=MeanAndStd)
+Stats
+plot(iris$Sepal.Length,
+     col=as.numeric(iris$Species),
+     ylab="Sepal Length")
+legend('topleft',legend=levels(iris$Species),pch=1:3)
+boxplot(Sepal.Length~Species,data=iris)
 
 
 
