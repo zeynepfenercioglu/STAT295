@@ -68,6 +68,3 @@ boxplot(Sepal.Length~Species,data=iris)
 
 
 
-
-
-
